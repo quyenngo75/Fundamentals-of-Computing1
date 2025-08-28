@@ -19,7 +19,7 @@ public class E5_Filter_Even_Numbers {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap so phan tu cua mang ");
         int n = sc.nextInt();
-        int a[] = new int[10];
+        int a[] = new int[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Nhap gia tri cua phan tu trong mang: ");
             a[i] = sc.nextInt();
