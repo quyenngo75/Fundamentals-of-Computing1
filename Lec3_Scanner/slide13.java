@@ -1,4 +1,4 @@
-package Lec3;
+package Lec3_Scanner;
 import java.util.Scanner;
 public class slide13 {
     public static void main(String args[])
