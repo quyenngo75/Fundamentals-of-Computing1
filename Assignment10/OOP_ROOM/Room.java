@@ -41,17 +41,17 @@ public abstract class Room implements IRoom{
     @Override
     public void addRoom()
     {
-        System.out.println("");
-    }
-    @Override
-    public void updateRoom()
-    {
-        System.out.println("Enter id: ");
+       System.out.println("Enter id: ");
         setId(sc.nextLine());
         System.out.println("Enter name: ");
         setName(sc.nextLine());
         System.out.println("Enter BaseCost: ");
         setBaseCost(sc.nextDouble());
+    }
+    @Override
+    public void updateRoom()
+    {
+       
     }
     @Override
     public void disPlayDetails()

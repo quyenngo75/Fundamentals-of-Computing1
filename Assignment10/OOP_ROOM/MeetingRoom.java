@@ -25,9 +25,10 @@ public class MeetingRoom extends Room {
 
     @Override
     public void addRoom() {
+         super.addRoom();
         System.out.println("Enter capacity: ");
         setCapacity(sc.nextInt());
-        super.addRoom();
+       
     }
 
     @Override
