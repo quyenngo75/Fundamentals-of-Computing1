@@ -1,8 +1,7 @@
-package Code5_OOP_Person;
+package Code7_OOP_Person;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Scanner;
+import java.util.*;
 
 public abstract class Person implements IPerson {
 
@@ -10,7 +9,7 @@ public abstract class Person implements IPerson {
     private String name;
     private Date dateOfBirth;
     Scanner sc = new Scanner(System.in);
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
 
     public Person() {
     }
@@ -53,31 +52,31 @@ public abstract class Person implements IPerson {
             System.out.println("Enter name: ");
             setName(sc.nextLine());
             System.out.println("Enter date of birth: ");
-            String date = sc.nextLine();
-            setDateOfBirth(sdf.parse(date));
+            setDateOfBirth(sdf.parse(sc.nextLine()));
         } catch (Exception e) {
-            System.out.println("Error!");
+            System.out.println("Error format birthday");
         }
     }
 
     @Override
-    public boolean updatePerson() {
-        try {
+    public void disPlayDetails()
+    {
+        System.out.println("id: "+getId());
+        System.out.println("name: "+getName());
+        System.out.println("date of birth: "+sdf.format(getDateOfBirth()));
+    }
+    @Override
+    public void updatePerson()
+    {
+          try {
+            sc.nextLine();
             System.out.println("Update name: ");
             setName(sc.nextLine());
             System.out.println("Update date of birth: ");
-            String date = sc.nextLine();
-            setDateOfBirth(sdf.parse(date));
+            setDateOfBirth(sdf.parse(sc.nextLine()));
         } catch (Exception e) {
-            System.out.println("Error!");
-        }
-        return true;
+            System.out.println("Error format birthday");
+        }       
     }
 
-    @Override
-    public void disPlayDetails() {
-        System.out.println("id: " + getId());
-        System.out.println("name: " + getName());
-        System.out.println("date of birth: " + getDateOfBirth());
-    }
 }

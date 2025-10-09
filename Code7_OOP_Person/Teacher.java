@@ -1,4 +1,4 @@
-package Code5_OOP_Person;
+package Code7_OOP_Person;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -38,19 +38,18 @@ public class Teacher extends Person {
     public void addPerson() {
         super.addPerson();
         System.out.println("Enter number of classes: ");
-        setNumberOfClasses(Integer.parseInt(sc.nextLine()));
+        setNumberOfClasses(sc.nextInt());
         System.out.println("Enter base salary: ");
-        setBaseSalary(Double.parseDouble(sc.nextLine()));
+        setBaseSalary(sc.nextDouble());
     }
 
     @Override
-    public boolean updatePerson() {
+    public void updatePerson() {
         super.updatePerson();
         System.out.println("Update number of classes: ");
-        setNumberOfClasses(Integer.parseInt(sc.nextLine()));
+        setNumberOfClasses(sc.nextInt());
         System.out.println("Update base salary: ");
-        setBaseSalary(Double.parseDouble(sc.nextLine()));
-        return true;
+        setBaseSalary(sc.nextDouble());
     }
 
     @Override
@@ -58,10 +57,12 @@ public class Teacher extends Person {
         super.disPlayDetails();
         System.out.println("number of classes: " + getNumberOfClasses());
         System.out.println("base salary: " + getBaseSalary());
+        System.out.println("income: " + calculateIncome());
     }
 
     @Override
     public double calculateIncome() {
         return getNumberOfClasses() * getBaseSalary();
     }
+
 }
